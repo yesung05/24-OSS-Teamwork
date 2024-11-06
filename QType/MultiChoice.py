@@ -1,11 +1,19 @@
 import random
 
 def MultiChoice(num,Question): #객관식 문제 출력
-    print(f"{num}. {Question[3]}") #문제 출력
-    options = Question[4:9] 
-    random.shuffle(options) #보기 랜덤하게 섞음
     Answer = Question[2]
+    options = Question[4:9] 
+    random.shuffle(options)
+    if Answer not in options:
+        print("이 문제는 잘못된 문제입니다.")
+        print("Exiting...")
+        return
+    
+    print(f"{num}. {Question[3]}") #문제 출력
+     #보기 랜덤하게 섞음
+    
     # 섞인 보기 출력
+
     for i, option in enumerate(options):
         print(f"\t({i+1}){option}")
     UserAnswer = input("정답: ")
