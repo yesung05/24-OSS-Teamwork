@@ -1,0 +1,51 @@
+Number,Type,Answer,Question,example1,example2,example3,example4,example5
+1,1,"파이썬","프로그래밍 언어 중 인터프리터 방식의 언어는?","C","C++","자바","파이썬","고"
+2,1,"Indentation","Python에서 코드 블록을 구분하는 방식은?","Curly braces","Indentation","Parentheses","Semi-colon","Quotation marks"
+3,1,"List","Python에서 순서가 있고 변경 가능한 컬렉션 타입은?","Tuple","List","Set","Dictionary","String"
+4,2,"len","Python에서 문자열의 길이를 반환하는 함수는? (3글자, 영문)",,,,,
+5,1,"self","Python 클래스에서 인스턴스 메서드를 정의할 때 첫 번째 매개변수로 사용되는 것은?","this","self","cls","init","me"
+6,3,"O","Python에서 클래스 내에서 함수를 정의할 수 있다",,,,,
+7,2,"True","None은 불린 값에서 어떤 값으로 평가되는가? (영문으로)",,,,,
+8,1,"__init__","Python의 생성자 메서드는?","__init__","__start__","__create__","__construct__","__begin__"
+9,1,"Dictionary","Python에서 키-값 쌍으로 데이터를 저장하는 컬렉션 타입은?","List","Set","Tuple","Dictionary","Array"
+10,3,"X","Python의 float 타입은 정수를 표현할 수 있다",,,,,
+11,1,"index","리스트에서 특정 요소의 인덱스를 찾는 함수는?","index","find","search","locate","spot"
+12,2,"lambda","익명 함수를 정의하는 키워드는? (영문)",,,,,
+13,1,"Set","중복 요소를 허용하지 않는 Python의 컬렉션 타입은?","List","Set","Tuple","Dictionary","Array"
+14,3,"O","Python에서 for 반복문을 사용할 수 있다",,,,,
+15,2,"pass","아무런 동작을 하지 않는 구문은? (영문)",,,,,
+16,1,"False","0의 불린 값은 무엇인가?","True","False","None","Empty","Zero"
+17,1,"int","숫자를 정수로 변환하는 함수는?","float","str","int","double","char"
+18,3,"X","Python에는 switch 문이 존재한다",,,,,
+19,2,"yield","Generator 함수에서 값을 반환하는 키워드는? (영문)",,,,,
+20,1,"Global","모든 함수에서 접근할 수 있는 변수는 어떤 범위에 있는가?","Local","Instance","Global","Protected","Private"
+21,3,"O","Python에서 문자열은 슬라이싱이 가능하다",,,,,
+22,1,"Slice","리스트의 일부분을 잘라내는 연산을 무엇이라 부르는가?","Cut","Select","Slice","Trim","Segment"
+23,1,"os","Python에서 운영체제 관련 기능을 다루는 모듈은?","sys","os","platform","math","config"
+24,2,"del","변수를 삭제하는 명령어는? (영문)",,,,,
+25,3,"X","Python의 Tuple은 수정이 가능하다",,,,,
+26,1,"Exception","에러가 발생했을 때 예외를 처리하기 위한 클래스는?","Error","Issue","Exception","Problem","Warning"
+27,2,"filter","조건에 맞는 요소를 골라내는 함수는? (영문)",,,,,
+28,1,"join","리스트의 요소들을 문자열로 연결하는 메서드는?","concat","join","append","insert","add"
+29,3,"O","Python의 정규 표현식을 다루는 re 모듈이 있다",,,,,
+30,2,"map","함수를 리스트의 각 요소에 적용하는 함수는? (영문)",,,,,
+31,1,"while","조건이 참일 동안 반복하는 반복문은?","for","while","do","repeat","until"
+32,1,"abs","절댓값을 반환하는 함수는?","abs","math.abs","absolute","value","math.value"
+33,2,"break","반복문을 즉시 종료하는 명령어는? (영문)",,,,,
+34,3,"X","Python에서 모든 함수는 반드시 값을 반환해야 한다",,,,,
+35,1,"try","예외 처리를 시작하는 키워드는?","catch","try","except","finally","if"
+36,3,"O","Python에서 import를 사용해 모듈을 가져올 수 있다",,,,,
+37,1,"sorted","리스트를 정렬한 새 리스트를 반환하는 함수는?","sort","order","sorted","arrange","organize"
+38,2,"str","숫자를 문자열로 변환하는 함수는? (영문)",,,,,
+39,1,"False","빈 문자열의 불린 값은?","True","False","None","Null","Zero"
+40,3,"O","Python에서 클래스를 정의할 수 있다",,,,,
+41,2,"async","비동기 작업을 시작하는 키워드는? (영문)",,,,,
+42,1,"sys","Python에서 시스템 관련 기능을 다루는 모듈은?","os","sys","platform","math","config"
+43,3,"X","Python은 컴파일 언어이다",,,,,
+44,1,"sorted","리스트를 정렬한 새로운 리스트를 반환하는 함수는?","order","sort","sorted","arrange","organize"
+45,2,"continue","반복문의 다음 순회로 넘어가게 하는 명령어는? (영문)",,,,,
+46,3,"O","Python에서 여러 파일을 하나의 패키지로 묶을 수 있다",,,,,
+47,1,"float","소수점을 포함한 숫자를 나타내는 타입은?","int","float","double","char","byte"
+48,2,"__name__","Python에서 현재 모듈의 이름을 나타내는 특별한 변수는? (영문)",,,,,
+49,1,"HashSet","Python의 집합 자료구조는 무엇을 기반으로 구현되는가?","List","HashSet","Tree","Dictionary","Tuple"
+50,1,"open","파일을 열 때 사용하는 기본 함수는?","read","open","write","load","access"
