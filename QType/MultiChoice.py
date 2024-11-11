@@ -22,8 +22,8 @@ def MultiChoice(num,Question): #객관식 문제 출력
         UserAnswer -= 1
         Check = options[UserAnswer] == Answer 
     else:
-        UserAnswer = UserAnswer.replace(" ","")
-        answerNoSpace = Answer.replace(" ","")
+        UserAnswer = UserAnswer.replace(" ","").lower()
+        answerNoSpace = Answer.replace(" ","").lower()
         Check =  (UserAnswer == answerNoSpace) # 두 값이 같으면 true, 아니면 False
 
     if(Check): #선택한 보기랑 정답에 값이 같으면

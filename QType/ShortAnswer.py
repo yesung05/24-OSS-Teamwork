@@ -1,7 +1,8 @@
 def ShortAnswer(num,Question): # 단답형 문제 함수
     print(f"{num}. {Question[3]}")
-    answer = input("정답: ")
-    if(Question[2]==answer):
+    UserAnwser = input("정답: ").replace(" ","").lower()
+    Anwser = Question[2].replace(" ","").lower()
+    if(Anwser==UserAnwser):
         print("정답입니다.")
     else:
         print("오답입니다.")
