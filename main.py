@@ -41,3 +41,6 @@ for i in range(count):  # 원하는 문제 횟수로 반복
         pqt.ShortAnswer(i+1, datas[i])
     elif Qtype == "O, X":
         pqt.OX(i+1, datas[i])
+    print("------------------------------------------")
+
+input()
