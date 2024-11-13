@@ -1,18 +1,20 @@
-def selcount(datas):
-    sel = True
-    while(sel):
+def selcount(datas):  # 사용자에게 풀 문제의 개수를 선택받는 함수
+    sel = True  # 선택을 계속할지 여부를 나타내는 변수
+    while(sel):  # 사용자가 올바른 입력을 할 때까지 반복
         print('------------------------------------------')
-        print(f"선택된 문제집에 등록된 문제의 수가 {len(datas)}개입니다.")
-        count = input("몇 문제를 풀 것인지 정해주세요. (다시 선택하시려면 'q'를 입력해주세요.): ")
-        if(count == 'q'): 
-            return False
+        print(f"선택된 문제집에 등록된 문제의 수가 {len(datas)}개입니다.")  # 문제집에 있는 문제 수 출력
+        count = input("몇 문제를 풀 것인지 정해주세요. (다시 선택하시려면 'q'를 입력해주세요.): ")  # 풀 문제 개수를 입력 받음
+        if(count == 'q'):  # 사용자가 'q'를 입력하면 선택을 종료
+            return False  # 선택이 취소되었으므로 False 반환
             
         else:
-            count = int(count)
+            count = int(count)  # 입력받은 값을 정수로 변환
 
-        if(count > len(datas)): # 만약 입력한 문제 수가 문제집 문제 수를 초과하면 (수정 예정)
-            print(f"{len(datas)}개의 이하의 값을 입력해주세요.")
+        # 입력한 문제 수가 문제집에 있는 문제 수를 초과하면 경고
+        if(count > len(datas)):  # 만약 입력한 문제 수가 문제집의 문제 수를 초과하면
+            print(f"{len(datas)}개 이하의 값을 입력해주세요.")  # 유효한 문제 수를 안내
             print('------------------------------------------')
-            continue
-        sel = False
-    return int(count)
+            continue  # 다시 입력 받기 위해 루프를 계속
+
+        sel = False  # 올바른 문제 수가 입력되었으면 반복을 종료
+    return int(count)  # 선택된 문제 수를 반환
