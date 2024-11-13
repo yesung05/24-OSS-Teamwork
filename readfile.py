@@ -9,13 +9,18 @@ def readfile():
 
     # 파일이 있으면 목록을 출력하고 사용자로부터 선택 받기
     if csv_files:
+        print('------------------------------------------')
         print("CSV 파일 목록:")
         for idx, file in enumerate(csv_files, 1):
             print(f"{idx}. {file}")
         
         # 사용자로부터 선택 받기
-        choice = int(input("원하는 파일의 번호를 입력하세요: "))
-        
+        choice = input("원하는 파일의 번호를 입력하세요(종료 : 'q'): ")
+        if(choice.upper()=='Q'):
+            print("종료합니다.")
+            exit()
+        else:
+            choice = int(choice)
         if 1 <= choice <= len(csv_files):
             selected_file = csv_files[choice - 1]
             print(f"선택된 파일: {selected_file}")
