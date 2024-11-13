@@ -14,14 +14,6 @@ answer : 입력받은 정답
 
 """
 
-# file_path = readfile.readfile()
-# datas = readcsv.readcsv(file_path)
-
-# 데이터 섞기
-
-
-
-
 print()
 print('------------------------------------------')
 print()
