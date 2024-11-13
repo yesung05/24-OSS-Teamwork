@@ -4,5 +4,4 @@ def askonemore():
     if(resume == 'O'):
         return True
     else:
-        print('종료합니다.')
         return False

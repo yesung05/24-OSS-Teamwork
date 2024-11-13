@@ -28,6 +28,8 @@ def MultiChoice(num,Question): #객관식 문제 출력
 
     if(Check): #선택한 보기랑 정답에 값이 같으면
         print("정답입니다.")
+        return 1
     else:
         print("오답입니다.")
         print(f"정답은 {options.index(Question[2])+1}번 입니다.") #정답 번호 출력
+        return 0

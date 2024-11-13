@@ -4,6 +4,8 @@ def ShortAnswer(num,Question): # 단답형 문제 함수
     Anwser = Question[2].replace(" ","").lower()
     if(Anwser==UserAnwser):
         print("정답입니다.")
+        return 1
     else:
         print("오답입니다.")
         print(f"정답은 {Question[2]}입니다.")
+        return 0
