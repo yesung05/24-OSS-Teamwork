@@ -4,6 +4,7 @@ import ReturnQuestionType as rqt  # Return Question Type
 import readfile
 import readcsv
 import runq
+import onemore
 """
 **필드명**
 
@@ -35,19 +36,14 @@ while(sel):
         continue
 
     sel = False
+
 print()
 print('------------------------------------------')
 print()
-runq.runqq(count,datas)
-# for i in range(count):  # 원하는 문제 횟수로 반복
-
-#     Qtype = rqt.getQuestionType(datas[i])
-#     if Qtype == "객관식":
-#         pqt.MultiChoice(i+1, datas[i])
-#     elif Qtype == "단답형":
-#         pqt.ShortAnswer(i+1, datas[i])
-#     elif Qtype == "O, X":
-#         pqt.OX(i+1, datas[i])
-#     print('------------------------------------------')
-
-# input()
+conti = True
+while (conti):
+    running = runq.runqq(count,datas)
+    if(not running):
+        if(not onemore.askonemore()):
+            break
+    
