@@ -44,7 +44,6 @@ Number,Type,Answer,Question,example1,example2,example3,example4,example5
 43,2,객체,파이썬에서 데이터와 관련된 함수가 결합된 구조는?,,,,,
 44,3,O,파이썬에서 모든 것은 객체로 취급된다,,,,,
 45,1,HTML,웹 페이지의 기본 구조를 정의하는 언어는?,HTML,CSS,JavaScript,Python,Java
-46,2,컴파일러,코드를 기계어로 변환하는 프로그램은?,,,,,
 47,3,X,파이썬에서는 배열 자료형이 있다,,,,,
 48,1,API,어플리케이션 간의 상호작용을 위한 인터페이스는?,SDK,API,CLI,GUI,IDE
 49,2,메모리 누수,사용되지 않는 메모리가 해제되지 않는 현상은?,,,,,
