@@ -19,3 +19,5 @@ Dongyang Mirae Univ. 24 OSS Teamwork Project
 
 
 ```git clone https://github.com/yesung05/24-OSS-Teamwork```
+```git pull```
+```git push```
