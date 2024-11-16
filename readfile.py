@@ -10,7 +10,7 @@ def readfile():  # 파일을 선택하는 함수
     # 파일이 있으면 목록을 출력하고 사용자로부터 선택 받기
     if csv_files:  # CSV 파일이 하나 이상 있으면
         print('------------------------------------------')
-        print("CSV 파일 목록:")  # 파일 목록 출력
+        print("CSV 파일 목록")  # 파일 목록 출력
         for idx, file in enumerate(csv_files, 1):  # 파일 목록을 출력 (1부터 인덱스 시작)
             print(f"{idx}. {file}")  # 파일 이름 출력
         
