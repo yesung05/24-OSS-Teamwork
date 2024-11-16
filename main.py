@@ -35,6 +35,7 @@ while (conti):  # 문제가 끝날 때까지 반복
     
     # 문제 풀기 실행
     running = runq.runqq(count, datas)  # 문제를 풀고 결과를 반환하는 함수 호출
+    
     if (not running):  # 문제가 다 풀린 후
         if (not onemore.askonemore()):  # 추가 문제를 풀지 여부를 묻는 함수 호출
             break  # 더 이상 풀지 않으면 반복을 종료

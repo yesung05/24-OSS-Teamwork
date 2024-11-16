@@ -1,4 +1,5 @@
 import random
+!import QType.giveupmidway as gum
 
 def MultiChoice(num, Question):  # 객관식 문제 출력 함수
     while(True):
@@ -20,6 +21,7 @@ def MultiChoice(num, Question):  # 객관식 문제 출력 함수
         
         # 사용자에게 정답 입력 받기
         UserAnswer = input("정답: ")  # 사용자 입력 받기
+        !gum(UserAnswer) # 사용자 입력을 받은 결과를 중도포기함수에 전달
         if UserAnswer.isdigit():  # 입력이 숫자일 경우 (보기를 숫자로 선택한 경우)
             UserAnswer = int(UserAnswer)  # 입력값을 정수로 변환
             UserAnswer -= 1  # 사용자 선택 번호는 0부터 시작하기 때문에 1을 빼서 인덱스 맞추기

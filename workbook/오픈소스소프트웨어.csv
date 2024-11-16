@@ -1,0 +1,51 @@
+Number,Type,Answer,Question,example1,example2,example3,example4,example5
+1,1,"git init","로컬 저장소를 생성하는 명령어는?","git add","git commit","git init","git push","git clone"
+2,1,"git status","현재 작업 상태를 확인하는 명령어는?","git log","git status","git add","git diff","git show"
+3,1,"branch","Git에서 별도의 작업 흐름을 만드는 기능은?","branch","commit","merge","tag","pull"
+4,2,"commit","변경 사항을 저장하는 명령어는? (영문)",,,,,
+5,1,"origin","Git에서 원격 저장소의 기본 이름은?","origin","master","main","remote","upstream"
+6,1,"git clone","원격 저장소를 복제하는 명령어는?","git fetch","git push","git clone","git pull","git fork"
+7,3,"O","Git에서 여러 브랜치를 동시에 사용할 수 있다",,,,,
+8,1,"HEAD","현재 체크아웃된 커밋을 가리키는 포인터는?","HEAD","TAIL","REF","BASE","ROOT"
+9,2,"pull","원격 저장소의 변경 내용을 가져오는 명령어는? (영문)",,,,,
+10,3,"X","GitHub는 Git의 소유 회사다",,,,,
+11,1,"merge","브랜치를 병합하는 명령어는?","merge","branch","commit","rebase","push"
+12,2,"stash","임시로 변경사항을 저장하는 명령어는? (영문)",,,,,
+13,1,"git log","커밋 기록을 확인하는 명령어는?","git status","git log","git diff","git commit","git push"
+14,3,"O","GitHub에서 Pull Request를 생성할 수 있다",,,,,
+15,2,"fork","GitHub에서 다른 사람의 저장소를 복사하여 내 계정으로 가져오는 기능은? (영문)",,,,,
+16,1,"git push","로컬의 변경 사항을 원격 저장소에 반영하는 명령어는?","git add","git commit","git push","git pull","git merge"
+17,1,"diff","변경된 내용을 확인하는 명령어는?","diff","status","show","log","fetch"
+18,3,"O","Git은 분산 버전 관리 시스템이다",,,,,
+19,1,"pull request","GitHub에서 다른 사람의 코드에 변경을 제안하는 기능은?","pull request","commit","merge","branch","push"
+20,2,"add","새 파일을 스테이징 하는 명령어는? (영문)",,,,,
+21,3,"X","Git은 서버에 의존하는 중앙 집중형 버전 관리 시스템이다",,,,,
+22,1,"rebase","브랜치의 기반 커밋을 다른 커밋으로 이동하는 명령어는?","merge","rebase","cherry-pick","reset","checkout"
+23,1,"checkout","다른 브랜치로 이동하는 명령어는?","branch","reset","checkout","merge","switch"
+24,2,"origin/main","기본 브랜치에서 원격으로 작업할 때 주로 사용하는 브랜치 이름은? (예: origin/main)",,,,,
+25,1,"tag","특정 커밋에 이름을 붙이는 기능은?","branch","tag","merge","pull","push"
+26,2,"conflict","병합 과정에서 발생하는 충돌을 무엇이라 하는가? (영문)",,,,,
+27,3,"X","GitHub에서 개인 저장소는 완전히 무료로 공개할 수 없다",,,,,
+28,1,"remote","원격 저장소와 연결을 관리하는 명령어는?","clone","fetch","remote","push","pull"
+29,1,"init","Git에서 새 로컬 저장소를 초기화하는 명령어는?","init","commit","branch","merge","log"
+30,2,"cherry-pick","특정 커밋을 선택하여 다른 브랜치로 적용하는 명령어는? (영문)",,,,,
+31,3,"O","Git에서 브랜치를 삭제할 수 있다",,,,,
+32,1,"main","GitHub의 기본 브랜치 이름은?","origin","branch","master","main","upstream"
+33,2,"commit","Git에서 저장소의 스냅샷을 생성하는 명령어는? (영문)",,,,,
+34,1,"reset","커밋을 되돌리는 명령어는?","checkout","commit","reset","revert","push"
+35,3,"X","Git에서 모든 파일을 자동으로 추적한다",,,,,
+36,1,"git ignore","Git에서 특정 파일을 추적하지 않도록 설정하는 파일 이름은?","gitignore","gitrack","gitignore","githide","gitomit"
+37,1,"pull","원격 저장소의 최신 변경 사항을 로컬로 가져오는 명령어는?","push","pull","fetch","commit","merge"
+38,2,"HEAD","가장 최근 커밋을 참조하는 기본 포인터는? (영문)",,,,,
+39,3,"O","GitHub Actions를 통해 자동화된 워크플로우를 설정할 수 있다",,,,,
+40,1,"git config","Git의 설정을 변경하는 명령어는?","git config","git set","git init","git modify","git update"
+41,1,"log","커밋 히스토리를 확인하는 명령어는?","status","log","history","show","branch"
+42,2,"merge","Git에서 두 브랜치를 하나로 합치는 명령어는? (영문)",,,,,
+43,1,"revert","Git에서 이전 커밋으로 변경을 되돌리는 명령어는?","reset","revert","undo","checkout","rollback"
+44,3,"X","Git은 커밋 기록을 삭제할 수 없다",,,,,
+45,1,"git mv","Git에서 파일의 이름을 변경하는 명령어는?","git rename","git mv","git change","git update","git move"
+46,1,"git rm","Git에서 파일을 추적 목록에서 삭제하는 명령어는?","git delete","git remove","git rm","git ignore","git hide"
+47,3,"O","GitHub에서 이슈를 생성하고 관리할 수 있다",,,,,
+48,1,"commit","Git에서 스냅샷을 생성하는 기본 단위는?","branch","commit","tag","stage","log"
+49,2,"fork","다른 사용자의 저장소를 내 계정에 복사하는 기능은? (영문)",,,,,
+50,1,"stash","Git에서 임시로 변경 사항을 저장해 두는 명령어는?","save","hide","stash","add","track"
