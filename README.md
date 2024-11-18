@@ -31,7 +31,7 @@ pyinstaller -F main.py
 ```
 git clone https://github.com/yesung05/24-OSS-Teamwork
 ```  
-- 로컬 깃 저장소 github 파일로 최신화  
+- 로컬 깃 저장소의 내용을 github 파일로 최신화  
 ```
 git pull
 ```  
