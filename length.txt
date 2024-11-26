@@ -1,0 +1,356 @@
+import random
+import QType as pqt  # Print Question Type
+import ReturnQuestionType as rqt  # Return Question Type
+import readfile
+import readcsv
+import runq
+import onemore
+import selcount as ct
+"""
+**필드명**
+
+Question : 문제
+num : 문제번호
+answer : 입력받은 정답
+
+"""
+
+print()
+print('------------------------------------------')
+print()
+conti = True
+while (conti):
+    file_path = readfile.readfile()
+    datas = readcsv.readcsv(file_path)
+
+    # 문제 풀기
+    random.shuffle(datas)
+    
+    val = ct.selcount(datas)
+    if(val == False):
+        continue
+    else:
+        count = val
+    running = runq.runqq(count,datas)
+    if(not running):
+        if(not onemore.askonemore()):
+            break
+    
+def askonemore():
+    resume = input("계속 하시겠습니까? (O,X): ")
+    resume = resume.upper()
+    if(resume == 'O'):
+        return True
+    else:
+        return False
+import csv
+import random
+
+def printChoiceQ(num,Question): #객관식 문제 출력
+    print(f"{num}. {Question[3]}") #문제 출력
+    options = Question[4:9] 
+    random.shuffle(options) #보기 랜덤하게 섞음
+    
+    # 섞인 보기 출력
+    for i, option in enumerate(options):
+        print(f"\t({i+1}){option}")
+    anwser = int(input("정답: "))
+    anwser -= 1
+
+    if(options[anwser]==Question[2]): #선택한 보기랑 정답에 값이 같으면
+        print("정답입니다.")
+    else:
+        print("오답입니다.")
+        print(f"정답은 {options.index(Question[2])+1}번 입니다.") #정답 번호 출력
+
+def printTypeQ(num, Question): #주관식 문제 출력
+    print(f"{num}. {Question[3]}")
+    anwser = input("정답을 입력하세요: ")
+    if(anwser == Question[2]):
+        print()
+
+def getQuestionType(type): #문제 유형 반환
+    typev = int(type[1])
+    match typev:
+        case 1:
+            return "객관식"
+        case 2:
+            return "단답형"
+        case 3:
+            return "O, X"
+
+
+# CSV 파일 경로 지정
+file_path = 'ExampleQuestion.csv'
+
+# 제목과 데이터를 담을 리스트 생성
+headers = []
+datas = []
+
+# CSV 파일 읽기
+with open(file_path, mode='r', encoding='utf-8') as file:
+    reader = csv.reader(file)
+    
+    # 첫 번째 행은 제목으로 저장
+    headers = next(reader)
+    
+    # 나머지 행은 데이터를 저장
+    for row in reader:
+        datas.append(row[:9])  # 첫 9개 열만 가져옴
+
+# print("Headers:", headers)
+# for data in datas:
+#     print(data)
+
+count = int(input("몇 문제를 풀 것인지 정해주세요."))
+
+for i in range(count): #원하는 문제 횟수로 반복
+    Qtype = getQuestionType(datas[i])
+    print(f"{i+1}. {Qtype} 형 문제입니다.")
+    if(Qtype == "객관식"):
+        printChoiceQ(i,datas[i])
+    elif(Qtype == "단답형"):
+        print('단답형')
+    elif(Qtype == "O, X"):
+        print('OX')
+
+# print(getQuestionType(datas[0]))
+
+import csv
+
+def readcsv(file_path):
+    headers = []
+    datas = []
+
+    # CSV 파일 읽기
+    with open(file_path, mode='r', encoding='utf-8') as file:
+        reader = csv.reader(file)
+        
+        # 첫 번째 행은 제목으로 저장
+        headers = next(reader)
+        
+        # 나머지 행은 데이터를 저장
+        for row in reader:
+            datas.append(row[:9])  # 첫 9개 열만 가져옴
+    
+    return datas
+import os
+
+def readfile():
+    # 폴더 경로 설정
+    folder_path = './workbook/'  # 폴더 경로를 실제 경로로 수정하세요.
+
+    # 폴더 안의 모든 .csv 파일을 가져오기
+    csv_files = [file for file in os.listdir(folder_path) if file.endswith('.csv')]
+
+    # 파일이 있으면 목록을 출력하고 사용자로부터 선택 받기
+    if csv_files:
+        print('------------------------------------------')
+        print("CSV 파일 목록:")
+        for idx, file in enumerate(csv_files, 1):
+            print(f"{idx}. {file}")
+        
+        # 사용자로부터 선택 받기
+        choice = input("원하는 파일의 번호를 입력하세요(종료 : 'q'): ")
+        if(choice.upper()=='Q'):
+            print("종료합니다.")
+            exit()
+        else:
+            choice = int(choice)
+        if 1 <= choice <= len(csv_files):
+            selected_file = csv_files[choice - 1]
+            print(f"선택된 파일: {selected_file}")
+            file_path = os.path.join(folder_path, selected_file)
+            return file_path
+        else:
+            print("잘못된 선택입니다.")
+            exit()  # 잘못된 선택이면 종료
+    else:
+        print("CSV 파일이 없습니다.")
+        exit()  # CSV 파일이 없으면 종료
+
+def getQuestionType(type): #문제 유형 반환
+    typev = int(type[1])
+    match typev:
+        case 1:
+            return "객관식"
+        case 2:
+            return "단답형"
+        case 3:
+            return "O, X"
+
+import QType as pqt
+import ReturnQuestionType as rqt
+def runqq(count, datas):
+    right = 0
+    for i in range(count):  # 원하는 문제 횟수로 반복
+
+        Qtype = rqt.getQuestionType(datas[i])
+        if Qtype == "객관식":
+            right += pqt.MultiChoice(i+1, datas[i])
+        elif Qtype == "단답형":
+            right += pqt.ShortAnswer(i+1, datas[i])
+        elif Qtype == "O, X":
+            right += pqt.OX(i+1, datas[i])
+        print('------------------------------------------')
+    print(f'{count}개의 문제 중 맞은 문제 수는 {right}개 입니다.')
+    print(f'정답률은 {right/count:.2%}')
+    print('------------------------------------------')
+    return False
+def selcount(datas):
+    sel = True
+    while(sel):
+        print('------------------------------------------')
+        print(f"선택된 문제집에 등록된 문제의 수가 {len(datas)}개입니다.")
+        count = input("몇 문제를 풀 것인지 정해주세요. (다시 선택하시려면 'q'를 입력해주세요.): ")
+        if(count == 'q'): 
+            return False
+            
+        else:
+            count = int(count)
+
+        if(count > len(datas)): # 만약 입력한 문제 수가 문제집 문제 수를 초과하면 (수정 예정)
+            print(f"{len(datas)}개의 이하의 값을 입력해주세요.")
+            print('------------------------------------------')
+            continue
+        sel = False
+    return int(count)
+
+import csv
+import random
+import os
+import QType as pqt  # Print Question Type
+import ReturnQuestionType as rqt  # Return Question Type
+
+"""
+**필드명**
+
+Question : 문제
+num : 문제번호
+answer : 입력받은 정답
+
+"""
+
+# 폴더 경로 설정
+folder_path = './workbook/'  # 폴더 경로를 실제 경로로 수정하세요.
+
+# 폴더 안의 모든 .csv 파일을 가져오기
+csv_files = [file for file in os.listdir(folder_path) if file.endswith('.csv')]
+
+# 파일이 있으면 목록을 출력하고 사용자로부터 선택 받기
+if csv_files:
+    print("CSV 파일 목록:")
+    for idx, file in enumerate(csv_files, 1):
+        print(f"{idx}. {file}")
+    
+    # 사용자로부터 선택 받기
+    choice = int(input("원하는 파일의 번호를 입력하세요: "))
+    
+    if 1 <= choice <= len(csv_files):
+        selected_file = csv_files[choice - 1]
+        print(f"선택된 파일: {selected_file}")
+        file_path = os.path.join(folder_path, selected_file)
+    else:
+        print("잘못된 선택입니다.")
+        exit()  # 잘못된 선택이면 종료
+else:
+    print("CSV 파일이 없습니다.")
+    exit()  # CSV 파일이 없으면 종료
+
+# 제목과 데이터를 담을 리스트 생성
+headers = []
+datas = []
+
+# CSV 파일 읽기
+with open(file_path, mode='r', encoding='utf-8') as file:
+    reader = csv.reader(file)
+    
+    # 첫 번째 행은 제목으로 저장
+    headers = next(reader)
+    
+    # 나머지 행은 데이터를 저장
+    for row in reader:
+        datas.append(row[:9])  # 첫 9개 열만 가져옴
+
+# 데이터 섞기
+random.shuffle(datas)
+
+# 문제 풀기
+count = int(input("몇 문제를 풀 것인지 정해주세요."))
+print()
+print('------------------------------------------')
+print()
+
+for i in range(count):  # 원하는 문제 횟수로 반복
+    Qtype = rqt.getQuestionType(datas[i])
+    if Qtype == "객관식":
+        pqt.MultiChoice(i+1, datas[i])
+    elif Qtype == "단답형":
+        pqt.ShortAnswer(i+1, datas[i])
+    elif Qtype == "O, X":
+        pqt.OX(i+1, datas[i])
+
+from .MultiChoice import *
+from .ShortAnswer import *
+from .OX import *
+
+import random
+
+def MultiChoice(num,Question): #객관식 문제 출력
+    Answer = Question[2]
+    options = Question[4:9] 
+    random.shuffle(options)
+    if Answer not in options:
+        print("이 문제는 잘못된 문제입니다.")
+        print("Exiting...")
+        return
+    
+    print(f"{num}. {Question[3]}") #문제 출력
+     #보기 랜덤하게 섞음
+    
+    # 섞인 보기 출력
+
+    for i, option in enumerate(options):
+        print(f"\t({i+1}){option}")
+    UserAnswer = input("정답: ")
+    if UserAnswer.isdigit():
+        UserAnswer = int(UserAnswer)
+        UserAnswer -= 1
+        Check = options[UserAnswer] == Answer 
+    else:
+        UserAnswer = UserAnswer.replace(" ","").lower()
+        answerNoSpace = Answer.replace(" ","").lower()
+        Check =  (UserAnswer == answerNoSpace) # 두 값이 같으면 true, 아니면 False
+
+    if(Check): #선택한 보기랑 정답에 값이 같으면
+        print("정답입니다.")
+        return 1
+    else:
+        print("오답입니다.")
+        print(f"정답은 {options.index(Question[2])+1}번 입니다.") #정답 번호 출력
+        return 0
+
+def OX(num,Question): # 단답형 문제 함수
+    print(f"{num}. {Question[3]}")
+    UserAnswer = input("정답(O, X): ")[0]
+    UserAnswer = UserAnswer.upper()
+
+    if(Question[2]==UserAnswer):
+        print("정답입니다.")
+        return 1
+    else:
+        print("오답입니다.")
+        print(f"정답은 {Question[2]}입니다.")
+        return 0
+
+def ShortAnswer(num,Question): # 단답형 문제 함수
+    print(f"{num}. {Question[3]}")
+    UserAnwser = input("정답: ").replace(" ","").lower()
+    Anwser = Question[2].replace(" ","").lower()
+    if(Anwser==UserAnwser):
+        print("정답입니다.")
+        return 1
+    else:
+        print("오답입니다.")
+        print(f"정답은 {Question[2]}입니다.")
+        return 0
