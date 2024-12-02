@@ -1,11 +1,17 @@
-def ShortAnswer(num,Question): # 단답형 문제 함수
-    print(f"{num}. {Question[3]}")
-    UserAnwser = input("정답: ").replace(" ","").lower()
-    Anwser = Question[2].replace(" ","").lower()
-    if(Anwser==UserAnwser):
-        print("정답입니다.")
-        return 1
-    else:
-        print("오답입니다.")
-        print(f"정답은 {Question[2]}입니다.")
-        return 0
+def ShortAnswer(num, Question):  # 단답형 문제 함수 (자유 형식 답변)
+    print(f"{num}. {Question[3]}")  # 문제 출력 (문제 리스트에서 4번째 항목)
+    
+    # 사용자로부터 정답 입력 받기 (공백 제거 및 소문자 변환)
+    UserAnwser = input("정답: ").replace(" ", "").lower()  # 사용자 입력값에서 공백 제거하고 소문자로 변환
+    
+    # 정답도 공백 제거하고 소문자로 변환
+    Anwser = Question[2].replace(" ", "").lower()  # 문제 리스트에서 3번째 항목을 정답으로 사용하고 공백 제거 및 소문자 변환
+    
+    # 정답 확인
+    if(Anwser == UserAnwser):  # 정답이 맞으면
+        print("정답입니다.")  # 정답 출력
+        return 1  # 정답이면 1 반환
+    else:  # 정답이 틀리면
+        print("오답입니다.")  # 오답 출력
+        print(f"정답은 {Question[2]}입니다.")  # 정답 출력
+        return 0  # 오답이면 0 반환
