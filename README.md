@@ -25,11 +25,11 @@
 
 ## 👥 Teammate
 
-- [@조예성](https://www.github.com/yesung05)
-- [@황용범](https://www.github.com/bengaldr0gon)
-- [@석지환](https://www.github.com/AJihwan)
-- [@이윤석](https://www.github.com/leeyunseok110)
-- [@함정원](https://www.github.com/jwon0117)
+- 조예성 [@yesung05](https://www.github.com/yesung05)
+- 황용범 [@bengaldr0gon](https://www.github.com/bengaldr0gon)
+- 석지환 [@AJihwan](https://www.github.com/AJihwan)
+- 이윤석 [@leeyunseok110](https://www.github.com/leeyunseok110)
+- 함정원 [@jwon0117](https://www.github.com/jwon0117)
 
 ## .exe 파일 생성하기
 - pyinstaller 설치  
